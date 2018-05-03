@@ -203,6 +203,10 @@ app.post('/transactions', function(request, response, next) {
   });
 });
 
+require("./routes/apiRoutes")(app);
+//require("./routes/htmlRoutes")(app);
+
+
 var server = app.listen(APP_PORT, function() {
   console.log('plaid-walkthrough server listening on port ' + APP_PORT);
 });
