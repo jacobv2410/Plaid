@@ -53,7 +53,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use(bodyparser.urlencoded({ extended: true }))
 app.use(bodyparser.json())
 
-
+//testing
 // var APP_PORT = "8080";
 // var PLAID_CLIENT_ID = '5ae4c1ebef7f2f0010f3f647';
 // var PLAID_SECRET = "4b7f8fd3e90f237c76888c5783863c"
