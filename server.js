@@ -35,6 +35,7 @@ var express = require('express');
 var bodyparser = require('body-parser');
 var moment = require('moment');
 var plaid = require('plaid');
+var nodemailer = require("nodemailer");
 
 
 // // npm packages
@@ -47,10 +48,15 @@ var app = express()
 
 // // middleware
 app.use(morgan('dev'))
-app.engine('hbs', expresshbs({defaultLayout: 'main', extname: '.hbs'}))
+app.engine('hbs', expresshbs({
+  defaultLayout: 'main',
+  extname: '.hbs'
+}))
 app.set('view engine', 'hbs')
 app.use(express.static(path.join(__dirname, 'public')))
-app.use(bodyparser.urlencoded({ extended: true }))
+app.use(bodyparser.urlencoded({
+  extended: true
+}))
 app.use(bodyparser.json())
 
 //testing
@@ -71,6 +77,13 @@ var PLAID_CLIENT_ID = process.env.PLAID_CLIENT_ID;
 var PLAID_SECRET = process.env.PLAID_SECRET;
 var PLAID_PUBLIC_KEY = process.env.PLAID_PUBLIC_KEY;
 var PLAID_ENV = process.env.PLAID_ENV;
+
+var EMAIL_USERNAME = process.env.EMAIL_USERNAME;
+var EMAIL_PASSWORD = process.env.EMAIL_PASSWORD;
+var CLIENT_ID = process.env.CLIENT_ID;
+var CLIENT_SECRET = process.env.CLIENT_SECRET;
+var GMAIL_REFRESH_TOKEN = process.env.REFRESH_TOKEN;
+var GMAIL_ACCESS_TOKEN = process.env.ACCESS_TOKEN;
 
 // We store the access_token in memory - in production, store it in a secure
 // persistent data store
@@ -105,108 +118,68 @@ var client = new plaid.Client(
 //   if (e) throw e
 // })
 
+app.get("/", function (req, res) {
+  //res.send("Hello world");
+  res.render("./layouts/main");
+})
 
-
-app.get('/', function(request, response, next) {
-  response.render('index', {
-    PLAID_PUBLIC_KEY: PLAID_PUBLIC_KEY,
-    PLAID_ENV: PLAID_ENV,
-  });
-});
-
-app.post('/get_access_token', function(request, response, next) {
-  PUBLIC_TOKEN = request.body.public_token;
-  client.exchangePublicToken(PUBLIC_TOKEN, function(error, tokenResponse) {
-    if (error != null) {
-      var msg = 'Could not exchange public_token!';
-      console.log(msg + '\n' + error);
-      return response.json({
-        error: msg
-      });
+app.post("/send", function (req, res) {
+  //console.log(req.body);
+  var output = `
+  <p>You have a new contact request</p>
+  <h3>Contact detaisl</h3>
+  <ul>
+    <li>Name: ${req.body.name}</li>
+    <li>Company: ${req.body.company}</li>
+    <li>Email: ${req.body.email}</li>
+    <li>Phone: ${req.body.phone}</li>
+  </ul>
+  <h3>Message</h3>
+  <p>${req.body.message}</p>
+  `;
+  // create reusable transporter object using the default SMTP transport
+  let transporter = nodemailer.createTransport({
+    service: "gmail",    
+    auth: {
+      type: "OAuth2",
+      user: EMAIL_USERNAME, // generated ethereal user
+      clientID: CLIENT_ID,
+      clientSecret: CLIENT_SECRET,
+      refreshToken: GMAIL_REFRESH_TOKEN,
+      accessToken: GMAIL_ACCESS_TOKEN      
     }
-    ACCESS_TOKEN = tokenResponse.access_token;
-    ITEM_ID = tokenResponse.item_id;
-    console.log('Access Token: ' + ACCESS_TOKEN);
-    console.log('Item ID: ' + ITEM_ID);
-    response.json({
-      'error': false
-    });
   });
-});
 
-app.get('/accounts', function(request, response, next) {
-  // Retrieve high-level account information and account and routing numbers
-  // for each account associated with the Item.
-  client.getAuth(ACCESS_TOKEN, function(error, authResponse) {
-    if (error != null) {
-      var msg = 'Unable to pull accounts from the Plaid API.';
-      console.log(msg + '\n' + error);
-      return response.json({
-        error: msg
-      });
+  // setup email data with unicode symbols
+  let mailOptions = {
+    from: "'Minh Nguyen 👻' <" + EMAIL_USERNAME + ">", // sender address
+    to: 'taolaobidaomail@gmail.com', // list of receivers
+    subject: 'Hello ✔', // Subject line
+    text: 'Hello world?', // plain text body
+    html: output // html body
+  };
+
+  // send mail with defined transport object
+  transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      return console.log(error);
     }
+    console.log('Message sent: %s', info.messageId);
+    // Preview only available when sending through an Ethereal account
+    console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
 
-    console.log(authResponse.accounts);
-    response.json({
-      error: false,
-      accounts: authResponse.accounts,
-      numbers: authResponse.numbers,
-    });
+    // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
+    // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
+
+    res.render("../views/layouts/main", {msg: "Email has been sent"});
   });
-});
 
-app.post('/item', function(request, response, next) {
-  // Pull the Item - this includes information about available products,
-  // billed products, webhook information, and more.
-  client.getItem(ACCESS_TOKEN, function(error, itemResponse) {
-    if (error != null) {
-      console.log(JSON.stringify(error));
-      return response.json({
-        error: error
-      });
-    }
-
-    // Also pull information about the institution
-    client.getInstitutionById(itemResponse.item.institution_id, function(err, instRes) {
-      if (err != null) {
-        var msg = 'Unable to pull institution information from the Plaid API.';
-        console.log(msg + '\n' + error);
-        return response.json({
-          error: msg
-        });
-      } else {
-        response.json({
-          item: itemResponse.item,
-          institution: instRes.institution,
-        });
-      }
-    });
-  });
-});
-
-app.post('/transactions', function(request, response, next) {
-  // Pull transactions for the Item for the last 30 days
-  var startDate = moment().subtract(30, 'days').format('YYYY-MM-DD');
-  var endDate = moment().format('YYYY-MM-DD');
-  client.getTransactions(ACCESS_TOKEN, startDate, endDate, {
-    count: 250,
-    offset: 0,
-  }, function(error, transactionsResponse) {
-    if (error != null) {
-      console.log(JSON.stringify(error));
-      return response.json({
-        error: error
-      });
-    }
-    console.log('pulled ' + transactionsResponse.transactions.length + ' transactions');
-    response.json(transactionsResponse);
-  });
 });
 
 require("./routes/apiRoutes")(app);
 //require("./routes/htmlRoutes")(app);
 
 
-var server = app.listen(APP_PORT, function() {
+app.listen(APP_PORT, function () {
   console.log('plaid-walkthrough server listening on port ' + APP_PORT);
 });
