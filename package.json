@@ -1,31 +1,32 @@
 {
-  "name": "expresstemplate-hbs",
+  "name": "herous",
   "version": "1.0.0",
-  "description": "A boilerplate project that sets up file structure and quick server set-up for an express app using static assets.",
+  "description": "link up heroku",
   "main": "server.js",
-  "dependencies": {
-    "body-parser": "^1.18.2",
-    "dotenv": "^5.0.1",
-    "express": "^4.16.3",
-    "express-handlebars": "^3.0.0",
-    "moment": "^2.22.1",
-    "morgan": "^1.9.0",
-    "plaid": "^2.4.1"
-  },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/teachcoding/expresstemplate-hbs.git"
+    "url": "git+https://github.com/JodeciLe84/sequelizedBurger.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "sequelize",
+    "burger"
+  ],
+  "author": "Jodeci Le",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/teachcoding/expresstemplate-hbs/issues"
+    "url": "https://github.com/JodeciLe84/sequelizedBurger/issues"
   },
-  "homepage": "https://github.com/teachcoding/expresstemplate-hbs#readme"
+  "homepage": "https://github.com/JodeciLe84/sequelizedBurger#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "mysql2": "^1.5.3",
+    "sequelize": "^4.37.6"
+  },
+  "devDependencies": {}
 }

@@ -1,30 +1,29 @@
-// ===============================================================================
-// DEPENDENCIES
-// We need to include the path package to get the correct file path for our html
-// ===============================================================================
-var path = require("path");
+// *********************************************************************************
+// Routes for displaying and saving data to the db
+// *********************************************************************************
 
+// Dependencies
+// =============================================================
 
-// ===============================================================================
-// ROUTING
-// ===============================================================================
+// Requiring our models
+var db = require('../models')
 
+// Routes
+// =============================================================
 module.exports = function(app) {
-  // HTML GET Requests
-  // Below code handles when users "visit" a page.
-  // In each of the below cases the user is shown an HTML page of content
-  // ---------------------------------------------------------------------------
 
-  app.get("/tables", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/tables.html"));
-  });
+// Retreving data from api and adding to database
+  app.post('/api/new', function(req, res) {
+    console.log(req.body)
+    db.New.create({
+      burger_name: req.body.burger_name,
+      devoured: false
+    })
+    res.json()
+  })
 
-//   app.get("/reserve", function(req, res) {
-//     res.sendFile(path.join(__dirname, "../public/reserve.html"));
-//   });
+  // app.get('/api/newBurger', function(req, res) {
+  //   res.json()
+  // })
 
-//   // If no matching route is found default to home
-//   app.get("*", function(req, res) {
-//     res.sendFile(path.join(__dirname, "../public/home.html"));
-//   });
-};
+}
