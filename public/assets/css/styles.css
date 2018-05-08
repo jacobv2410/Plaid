@@ -1,3 +1,5 @@
+/* Login======================================================================================================== */
+
 .form-signin {
   max-width: 330px;
   padding: 15px;
@@ -14,7 +16,7 @@
   position: relative;
   height: auto;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   padding: 10px;
   font-size: 16px;
 }
@@ -39,20 +41,144 @@ footer {
   position: fixed;
   right: 0;
   bottom: 0;
-  min-width: 100%; 
+  min-width: 100%;
   min-height: 100%;
 }
+
 /* Add some content at the bottom of the video/page */
-.form-signin{
-  
+.form-signin {
   position: absolute;
   top: 50%;
   left: 50%;
-
-  margin: -70px 0 0 -170px;
+  margin: -240px 0 0 -170px;
   background: rgba(0, 0, 0, 0.5);
   color: #f1f1f1;
   width: 100%;
   padding: 20px;
-  
+  border-radius: 8px;
 }
+
+/* Create new Account link */
+a.create {
+  color: whitesmoke;
+}
+a.create:hover {
+  color: #b9a2d3;
+  text-decoration: none;
+}
+
+/* Sign In Button */
+#sign {
+  background:#91c5a4;
+  color: white;
+  opacity:1;
+}
+
+#sign:hover
+{
+  opacity:0.9;
+}
+
+/* MAIN NAVIBARR====================================================================================================================== */
+
+/* Navibar links */
+a.nav-link {
+  margin: 0px 25px;
+  padding: 5px 10px;
+  font-size: 13px;
+}
+
+/* Calendar ===================================================================================================================== */
+
+.datepicker {
+  width: 305px;
+  height: 22  0px;
+  background: #fdfdfd;
+  border-radius: 10px;
+  box-shadow: 0 19px 38px rgba(0,0,0,0.2), 0 15px 12px rgba(0,0,0,0.2);
+  margin: 0px auto;
+  overflow: hidden;
+}
+
+.datepicker .ui-datepicker-inline {
+  padding: 0px;
+}
+
+/* Calendar header */
+.datepicker .ui-datepicker-header {
+  text-align: center;
+  font-size: 1.2em;
+  padding: .3em;
+  letter-spacing: .1em;
+  margin:1px, 0px;
+  background-color: #333;
+  color: #ddd;
+}
+/* header month arrows */
+.datepicker .ui-datepicker-header .ui-datepicker-prev,
+.datepicker .ui-datepicker-header .ui-datepicker-next {
+  float: left;
+  cursor: pointer;
+  font-size: 1.1em;
+  padding: 0 30px;
+  margin-top: -4px;
+  color: #ddd;
+  transition: .6s;
+}
+.datepicker .ui-datepicker-header .ui-datepicker-next {
+  float: right;
+}
+.datepicker .ui-datepicker-header .ui-datepicker-prev:hover {
+  transform: translateX(-20px)
+}
+.datepicker .ui-datepicker-header .ui-datepicker-next:hover {
+  transform: translateX(20px)
+}
+.datepicker .ui-datepicker-calendar {
+  width: 100%;
+  text-align: center;
+}
+
+/* sunday - saturday */
+.datepicker .ui-datepicker-calendar thead {
+  color: #333;
+  font-size: 0.9em;
+}
+.datepicker .ui-datepicker-calendar tr th,
+.datepicker .ui-datepicker-calendar tr td {
+  padding-bottom: .4em;
+}
+.datepicker .ui-datepicker-calendar a {
+  color: #333;
+  text-decoration: none;
+  display: block;
+  margin: 0 auto;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  cursor: pointer;
+  font-size: 0.8em;
+}
+
+.datepicker .ui-datepicker-calendar .ui-state-highlight {
+  background: #333;
+  color: #fff;
+}
+/* =========================================================================== */
+
+
+
+/* BILLS PAGE ===================================================================================================================== */
+
+button.btn{
+  color: #333;
+  font-weight: bold;
+}
+
+button.btn:hover {
+  text-decoration: none;
+  color: rgb(224, 206, 121);
+}
+
