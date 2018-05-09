@@ -1,7 +1,7 @@
 module.exports = function (sequelize, DataType) {
-  var Burger = sequelize.define('Burger', {
-    burger_name: DataType.STRING,
+  var Users = sequelize.define('Users', {
+    Users_name: DataType.STRING,
     devoured: DataType.BOOLEAN
   })
-  return Burger
+  return Users
 }

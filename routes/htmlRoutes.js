@@ -10,6 +10,10 @@ module.exports = function(app) {
    res.render('index')
   })
 
+  app.get('/index', function(req, res) {
+   res.render('index')
+  })
+
   app.get('/accounts', function(req, res) {
     res.render('accounts')
    })
