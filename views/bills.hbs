@@ -1,20 +1,21 @@
 {{!-- **********************--- BILLS --- *********************************************************************************--}}
-{{!--Navi-Bars =============================================================================== --}} {{!-- Dark NaviBar --}}
+
+{{!-- Title Bar --}}
 <nav class="navbar navbar-dark bg-dark ">
   <div class="container">
     <img src="assets/img/logo.png" width="65px" height="45px">
     <ul class="nav justify-content-end bg-dark px-2 ">
       <li class="nav-item">
-        <a class="nav-link active text-light" href="#">PROFILE</a>
+        <a class="nav-link active text-light" href="profile">PROFILE</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-light" href="#">LOG OUT</a>
+        <a class="nav-link text-light" href="login">LOG OUT</a>
       </li>
     </ul>
   </div>
 </nav>
 
-{{!-- Light NaviBar --}}
+{{!-- NaviBar --}}
 <nav class="navbar navbar-expand-lg navbar-dark bg-light text-">
   <div class="container">
     <div class="collapse navbar-collapse" id="navbarsExample07">
@@ -38,7 +39,6 @@
     </div>
   </div>
 </nav>
-
 
 {{!-- Main Container ============================================================================================--}}
 
@@ -85,16 +85,14 @@
     <div id="billsTable" class="col-8">
 
       {{!-- today tab --}}
-        <thead class="thead-dark" id="headingOne">
           <h5 class="mb-0 bg-light">
             <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
               Today
             </button>
           </h5>
-        </thead>
 
         {{!-- today info --}}
-        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" >
+        <div id="collapseOne" class="collapse show" >
 
           {{!-- sample today table 1 --}}
           <div class="row">
@@ -149,16 +147,14 @@
 
 
         {{!-- This Week Tab --}}
-        <thead class="thead-dark" id="headingTwo">
           <h5 class="mb-0 bg-light">
             <button class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
               Later this Week
             </button>
           </h5>
-        </thead>
 
         {{!-- this week info --}}
-        <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" >
+        <div id="collapseTwo" class="collapse show">
 
           {{!-- sample this week table 1 --}}
           <div class="row">
@@ -213,16 +209,14 @@
 
 
         {{!-- Next Week Tab --}}
-        <thead class="thead-dark" id="headingThree">
           <h5 class="mb-0 bg-light">
             <button class="btn btn-link" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
               Next Week
             </button>
           </h5>
-        </thead>
 
         {{!-- Next Week info --}}
-        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" >
+        <div id="collapseThree" class="collapse">
 
           {{!-- sample Next Week table 1 --}}
           <div class="row">
@@ -276,15 +270,13 @@
         </div>
 
         {{!-- This Month Tab --}}
-        <thead class="thead-dark" id="headingFour">
           <h5 class="mb-0 bg-light">
             <button class="btn btn-link" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
               Later this Month
             </button>
           </h5>
-        </thead>
         {{!-- This Month info --}}
-        <div id="collapseFour" class="collapse" aria-labelledby="headingFour" >
+        <div id="collapseFour" class="collapse">
 
           {{!-- sample This Month table 1 --}}
           <div class="row">
@@ -354,6 +346,7 @@
 
 <br>
 <br>
+
 
 <!--Footer-->
 <footer style="background-color: #91c5a4" class="page-footer font-small indigo pt-0 text-light">
@@ -432,4 +425,6 @@
 
   </div>
 
-</footer>
+
+  </footer>
+</html>

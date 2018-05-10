@@ -1,52 +1,55 @@
-{{!-- **********************--- TRANSACTIONS --- *************************************************************************************
---- Navi-Bars =============================================================================== --}} {{!-- Dark NaviBar --}}
-  <nav class="navbar navbar-dark bg-dark ">
-    <div class="container">
-      <img src="assets/img/logo.png" width="65px" height="45px">
-      <ul class="nav justify-content-end bg-dark px-2 ">
+{{!-- **********************--- TRANSACTIONS --- *************************************************************************************--}}
+
+{{!-- Title Bar --}}
+<nav class="navbar navbar-dark bg-dark ">
+  <div class="container">
+    <img src="assets/img/logo.png" width="65px" height="45px">
+    <ul class="nav justify-content-end bg-dark px-2 ">
+      <li class="nav-item">
+        <a class="nav-link active text-light" href="profile">PROFILE</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light" href="login">LOG OUT</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+{{!-- NaviBar --}}
+<nav class="navbar navbar-expand-lg navbar-dark bg-light text-">
+  <div class="container">
+    <div class="collapse navbar-collapse" id="navbarsExample07">
+      <ul class="nav mx-auto">
         <li class="nav-item">
-          <a class="nav-link active text-light" href="#">PROFILE</a>
+          <a class="nav-link text-dark" href="/">OVERVIEWS</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light" href="#">LOG OUT</a>
+          <a class="nav-link text-dark" href="/accounts">ACCOUNTS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="bills">BILLS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="transactions">TRANSACTIONS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="trends">TRENDS</a>
         </li>
       </ul>
     </div>
-  </nav>
-  <!-- {{!-Light NaviBar }} -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-light text-">
-    <div class="container">
-      <div class="collapse navbar-collapse" id="navbarsExample07">
-        <ul class="nav mx-auto">
-          <li class="nav-item">
-            <a class="nav-link text-dark" href="/">OVERVIEWS</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-dark" href="/accounts">ACCOUNTS</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-dark" href="bills">BILLS</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-dark" href="transactions">TRANSACTIONS</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-dark" href="trends">TRENDS</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  </div>
+</nav>
+
+{{! Main Container ============================================================================================}}
+  <div class="container mt-5 ">
  
-  <!-- {{! Main Container ============================================================================================}}   -->
- 
-    <div class="container mt-5 ">
-  <div class="container table">
+    <!-- accounts OPTION 2 -->
+    <div class="container table">
       <table class="table table-striped table-hover">
         <thead class="thead-dark">
           <tr>
             <blockquote>
-              <th scope="col">5/6</th>
+              <th scope="col">Date</th>
               <th scope="col">Transactions</th>
               <th scope="col">Category</th>
               <th scope="col">Amount</th>
@@ -55,38 +58,37 @@
         </thead>
         <tbody>
           <tr>
-            <td scope="row">5/2</td>
+            <th scope="row">1</th>
             <td>in & out</td>
             <td>food</td>
-            <td>$10</td>
+            <td>10</td>
           </tr>
           <tr>
-            <td scope="row">5/2</td>
+            <th scope="row">2</th>
             <td>dummy Transactions</td>
             <td>dummy category</td>
-            <td>$1000</td>
+            <td>1000</td>
           </tr>
           <tr>
-            <td scope="row">4/29</td>
+            <th scope="row">3</th>
             <td>chocolate</td>
             <td>dessert</td>
-            <td>$1,000,000</td>
+            <td>1,000,000</td>
           </tr>
         </tbody>
-           </table>
+      </table>
     </div>
   </div>
-  
-    <!-- chart area -->
-  
-  {{!-- <div class="container" class="pie">
+  <!-- end of container mt-5 -->
+  <!-- chart area -->
+  <div class="container" class="pie">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <table class="colums">
       <div class="row"></div>
       <div class="col-6"></div>
       <tr>
         <td>
-          <div id="donut_single" style="width: 500px; height: 500px;"></div>
+          <div id="donutchart" style="width: 500px; height: 500px;"></div>
         </td>
         <div class="col-6"></div>
         <td>
@@ -95,8 +97,10 @@
       </tr>
     </table>
   </div>
-  <br>
-  <br> --}}
+
+<br>
+<br>
+
 
 <!--Footer-->
 <footer style="background-color: #91c5a4" class="page-footer font-small indigo pt-0 text-light">
@@ -169,11 +173,22 @@
         </div>
 
       </div>
-      <!--Grid column-->
+      <!--Grid column closed-->
     </div>
-    <!--Grid row-->
+    <!--Grid row closed-->
 
   </div>
 
-
-</footer>
+    <!-- JS link -->
+    <script src="/assets/js/charts.js"></script>/
+    <!-- below are necesarry links for charts library display -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"></script>
+  </footer>
+</html>
