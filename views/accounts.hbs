@@ -1,5 +1,6 @@
-{{!-- **********************--- INDEX --- *************************************************************************************
---- Navi-Bars =============================================================================== --}} {{!-- Dark NaviBar --}}
+{{!-- **********************--- ACCOUNTS --- ********************************************************************** --}} 
+
+{{!-- Title Bar --}}
 <nav class="navbar navbar-dark bg-dark ">
   <div class="container">
     <img src="assets/img/logo.png" width="65px" height="45px">
@@ -14,16 +15,16 @@
   </div>
 </nav>
 
-{{!-- Light NaviBar --}}
+{{!-- NaviBar --}}
 <nav class="navbar navbar-expand-lg navbar-dark bg-light text-">
   <div class="container">
     <div class="collapse navbar-collapse" id="navbarsExample07">
       <ul class="nav mx-auto">
         <li class="nav-item">
-          <a class="nav-link text-dark" href="index">OVERVIEWS</a>
+          <a class="nav-link text-dark" href="/">OVERVIEWS</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-dark" href="accounts">ACCOUNTS</a>
+          <a class="nav-link text-dark" href="/accounts">ACCOUNTS</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-dark" href="bills">BILLS</a>
@@ -39,91 +40,107 @@
   </div>
 </nav>
 
-
 {{!-- Main Container ============================================================================================--}}
 
 <div class="container mt-5 ">
 
-  <div class="row">
-
-    <div class="col-4">
-      <div class="card">
-        <div class="card-header">Cash</div>
-        <div class="card-body">
-          <h5 class="card-title">Today</h5>
-          <p class="card-text">Insert Name, Types, and Amounts.</p>
-          <h5 class="card-title">Laster this Week</h5>
-          <h5 class="card-title">Next Week</h5>
-        </div>
-      </div>
+  {{!-- tabs area --}}
+  <div class="tab">
+    {{!-- bank account button --}}
+    <p class="mb-0 bg-light">
+      <button class="btn btn-link" data-toggle="collapse" data-target="#collapseBank" aria-expanded="true">
+        BANK ACCOUNTS
+      </button>
+    </p>
+    {{!-- bank collapse area holding all users bank accounts --}} {{!-- example bank accounts in tab --}}
+    <div id="collapseBank" class="collapse show">
+      <button class="tablinks" onclick="openCity(event, 'Chase')" id="defaultOpen">Chase</button>
+      <button class="tablinks" onclick="openCity(event, 'NavyFederal')">Navy Federal</button>
     </div>
-    
-
-    <div class="col-8">
-      -INSERT GRAPH-
+    {{!--credit card account button --}}
+    <p class="mb-0 bg-light">
+      <button class="btn btn-link" data-toggle="collapse" data-target="#collapseCredit" aria-expanded="true">
+        CREDIT CARD ACCOUNTS
+      </button>
+    </p>
+    {{!-- credit card collapse area holding all users credit cards accounts --}} {{!-- example credit card accounts in tab --}}
+    <div id="collapseCredit" class="collapse show">
+      <button class="tablinks" onclick="openCity(event, 'Discover')" id="defaultOpen">Discover</button>
+      <button class="tablinks" onclick="openCity(event, 'CapitalOne')">Capital One</button>
     </div>
-
+    <p class="mb-0 bg-light">
+      <button class="btn btn-link" data-toggle="collapse" data-target="#collapseLoan" aria-expanded="true">
+        LOAN ACCOUNTS
+      </button>
+    </p>
+    {{!-- credit card collapse area holding all users credit cards accounts --}} {{!-- example credit card accounts in tab --}}
+    <div id="collapseLoan" class="collapse show">
+      <button class="tablinks" onclick="openCity(event, 'Discover')" id="defaultOpen">Discover</button>
+      <button class="tablinks" onclick="openCity(event, 'CapitalOne')">Capital One</button>
+    </div>
   </div>
 
-  <br>
-  <br>
-
-
-  <div class="row">
-
-    <div class="col-4">
-      <div class="card">
-        <div class="card-header">Credit Cards</div>
-        <div class="card-body">
-          <h5 class="card-title">Today</h5>
-          <p class="card-text">Insert Name, Types, and Amounts.</p>
-          <h5 class="card-title">Laster this Week</h5>
-          <h5 class="card-title">Next Week</h5>
-        </div>
-      </div>
+  {{!-- example clicked on bank account, tab content --}} {{!-- bank account info bar --}}
+  <div id="Chase" class="tabcontent">
+    <h3>Chase</h3>
+    <h6>Business Checking</h6>
+    <hr>
+    <h8> BALANCE AVAILABLE CASH APY TOTAL FEES</h8>
+    <h6>$3000.60 $2700.40 12.0% $55.00</h6>
+    {{!-- bank account table --}}
+    <div class="container table">
+      <table class="table table-striped table-hover">
+        <thead class="thead-dark">
+          <tr>
+            <blockquote>
+              <th scope="col">Date</th>
+              <th scope="col">Transactions</th>
+              <th scope="col">Category</th>
+              <th scope="col">Amount</th>
+            </blockquote>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td scope="row">5/2</td>
+            <td>in & out</td>
+            <td>food</td>
+            <td>$10</td>
+          </tr>
+          <tr>
+            <td scope="row">5/2</td>
+            <td>dummy Transactions</td>
+            <td>dummy category</td>
+            <td>$1000</td>
+          </tr>
+          <tr>
+            <td scope="row">4/29</td>
+            <td>chocolate</td>
+            <td>dessert</td>
+            <td>$1,000,000</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-    
-
-    <div class="col-8">
-      -INSERT GRAPH-
-    </div>
-
   </div>
-  <br>
-  <br>
+  {{!-- bank account 2 --}}
+  <div id="NavyFederal" class="tabcontent">
+    <h3>Navy Federal</h3>
+    <h6>Savings</h6>
+    <hr>
+  </div>
 
 
-
-  <div class="row">
-
-    <div class="col-4">
-      <div class="card">
-        <div class="card-header">Loans</div>
-        <div class="card-body">
-          <h5 class="card-title">Today</h5>
-          <p class="card-text">Insert Name, Types, and Amounts.</p>
-          <h5 class="card-title">Laster this Week</h5>
-          <h5 class="card-title">Next Week</h5>
-        </div>
-      </div>
-    </div>
-    
-
-    <div class="col-8">
-      -INSERT GRAPH-
-
-    </div>
-
+  {{!-- example clicked on bank account, tab content --}} {{!-- bank account info bar --}}
+  <div id="Discover" class="tabcontent">
+    <h3>Discover</h3>
+    <h6>DiscoverCard Platinum </h6>
+    <hr>
+    <h8> BALANCE AVAILABLE CREDIT TOTAL CREDIT APR TOTAL FEES</h8>
+    <h6>$-1200.46 $3800.54 $6000 21.09% $55.00</h6>
   </div>
 
 </div>
-
-{{!--
-<div class="row">
-  <div class="col-4">col-4</div>
-  <div class="col-8">col-8</div>
-</div> --}}
-
 
 <br>
 <br>
@@ -131,86 +148,80 @@
 <!--Footer-->
 <footer style="background-color: #91c5a4" class="page-footer font-small indigo pt-0 text-light">
 
-    <!--Footer Links-->
-    <div class="container">
+  <!--Footer Links-->
+  <div class="container">
 
-        <!--Grid row-->
-        <div class="row pt-5 mb-3 text-center d-flex justify-content-center">
+    <!--Grid row-->
+    <div class="row pt-5 mb-3 text-center d-flex justify-content-center">
 
-            <!--Grid column-->
-            <div class="col-md-2 mb-3">
-                <h6 class="text-uppercase font-weight-bold">
-                    <h5>About Us</h5>
-                </h6>
-            </div>
-            <!--Grid column-->
-
-        </div>
-        <!--Grid row-->
-
-        <hr class="bg-light" style="margin: 0 15%;">
-
-        <!--Grid row-->
-        <div class="row d-flex text-center justify-content-center mb-md-0 mb-4">
-
-            <!--Grid column-->
-            <div class="col-md-8 col-12 mt-5">
-                <p style="line-height: 1.7rem">Our Links</p>
-
-            </div>
-            <!--Grid column-->
-
-        </div>
-        <!--Grid row-->
-
-        <hr class="clearfix d-md-none rgba-white-light" style="margin: 10% 15% 5%;">
-
-        <!--Grid row-->
-        <div class="row pb-3">
-
-            <!--Grid column-->
-            <div class="col-md-12">
-
-                <div class="mb-5 flex-center">
-                    <!--Facebook-->
-                    <a class="fb-ic">
-                        <i class="fa fa-facebook fa-lg white-text mr-md-4"> </i>
-                    </a>
-                    <!--Twitter-->
-                    <a class="tw-ic">
-                        <i class="fa fa-twitter fa-lg white-text mr-md-4"> </i>
-                    </a>
-                    <!--Google +-->
-                    <a class="gplus-ic">
-                        <i class="fa fa-google-plus fa-lg white-text mr-md-4"> </i>
-                    </a>
-                    <!--Linkedin-->
-                    <a class="li-ic">
-                        <i class="fa fa-linkedin fa-lg white-text mr-md-4"> </i>
-                    </a>
-                    <!--Instagram-->
-                    <a class="ins-ic">
-                        <i class="fa fa-instagram fa-lg white-text mr-md-4"> </i>
-                    </a>
-                    <!--Pinterest-->
-                    <a class="pin-ic">
-                        <i class="fa fa-pinterest fa-lg white-text"> </i>
-                    </a>
-                </div>
-            </div>
-            <!--Grid column-->
-        </div>
-        <!--Grid row-->
+      <!--Grid column-->
+      <div class="col-md-2 mb-3">
+        <h6>
+          <h5>About Us</h5>
+        </h6>
+      </div>
+      <!--Grid column-->
 
     </div>
-    <!--/Footer Links-->
+    <!--Grid row-->
 
-    <!--Copyright-->
-    {{!-- <div style="background-color: #483a99" class="footer-copyright py-3 text-center">
-        © 2018 Copyright:
-        <a href="#"> Horus.com </a> --}}
+    <hr class="bg-light" style="margin: 0 15%;">
+
+    <!--Grid row-->
+    <div class="row d-flex text-center justify-content-center mb-md-0 mb-4">
+
+      <!--Grid column-->
+      <div class="col-md-8 col-12 mt-5">
+        <p style="line-height: 1.7rem">Our Links</p>
+
+      </div>
+      <!--Grid column-->
+
     </div>
-    <!--/Copyright-->
+    <!--Grid row-->
 
-</footer>
-<!--/Footer-->
+    <hr class="clearfix d-md-none rgba-white-light" style="margin: 10% 15% 5%;">
+
+    <!--Grid row-->
+    <div class="row d-flex text-center justify-content-center pb-3">
+
+      <!--Grid column-->
+      <div class="col-md-12 ">
+
+        <div class="mb-5 mt-3">
+          <!--Facebook-->
+          <a class="fb-ic">
+            <i class="fa fa-facebook fa-lg white-text mr-md-4"> </i>
+          </a>
+          <!--Twitter-->
+          <a class="tw-ic">
+            <i class="fa fa-twitter fa-lg white-text mr-md-4"> </i>
+          </a>
+          <!--Google +-->
+          <a class="gplus-ic">
+            <i class="fa fa-google-plus fa-lg white-text mr-md-4"> </i>
+          </a>
+          <!--Linkedin-->
+          <a class="li-ic">
+            <i class="fa fa-linkedin fa-lg white-text mr-md-4"> </i>
+          </a>
+          <!--Instagram-->
+          <a class="ins-ic">
+            <i class="fa fa-instagram fa-lg white-text mr-md-4"> </i>
+          </a>
+          <!--Pinterest-->
+          <a class="pin-ic">
+            <i class="fa fa-pinterest fa-lg white-text"> </i>
+          </a>
+        </div>
+
+      </div>
+      <!--Grid column closed-->
+    </div>
+    <!--Grid row closed-->
+
+  </div>
+
+
+  </footer>
+</html>

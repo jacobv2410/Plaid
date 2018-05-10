@@ -1,11 +1,12 @@
-{{!-- **********************--- INDEX --- *************************************************************************************
---- Navi-Bars =============================================================================== --}} {{!-- Dark NaviBar --}}
+{{!-- **********************--- BILLS --- *********************************************************************************--}}
+
+{{!-- Title Bar --}}
 <nav class="navbar navbar-dark bg-dark ">
   <div class="container">
     <img src="assets/img/logo.png" width="65px" height="45px">
     <ul class="nav justify-content-end bg-dark px-2 ">
       <li class="nav-item">
-        <a class="nav-link active text-light" href="#">PROFILE</a>
+        <a class="nav-link active text-light" href="profile">PROFILE</a>
       </li>
       <li class="nav-item">
         <a class="nav-link text-light" href="login">LOG OUT</a>
@@ -14,16 +15,16 @@
   </div>
 </nav>
 
-{{!-- Light NaviBar --}}
+{{!-- NaviBar --}}
 <nav class="navbar navbar-expand-lg navbar-dark bg-light text-">
   <div class="container">
     <div class="collapse navbar-collapse" id="navbarsExample07">
       <ul class="nav mx-auto">
         <li class="nav-item">
-          <a class="nav-link text-dark" href="index">OVERVIEWS</a>
+          <a class="nav-link text-dark" href="/">OVERVIEWS</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-dark" href="accounts">ACCOUNTS</a>
+          <a class="nav-link text-dark" href="/accounts">ACCOUNTS</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-dark" href="bills">BILLS</a>
@@ -39,194 +40,391 @@
   </div>
 </nav>
 
-
 {{!-- Main Container ============================================================================================--}}
+
+{{!--infobar --}}
+<div class="py-4" style="background-color:rgba(245, 245, 245, 0.959);">
+  <div class="container  ">
+
+    <div class="row">
+      <div class="col-4 border-left">
+        <p>
+          BILLS DUE
+        </p>
+        <h4>
+          $0
+        </h4>
+      </div>
+      <div class="col-4 border-left">
+        <p>
+          CASH AVAIALIABLE
+        </p>
+        <h4>
+          $2000
+        </h4>
+      </div>
+      <div class="col-4 border-left">
+        <p>
+          CREDIT AVAIALIABLE
+        </p>
+        <h4>
+          $5000
+        </h4>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{{!-- table & calendar area============================================================================================ --}}
 
 <div class="container mt-5 ">
 
-  <div class="card-deck">
+  <div class="row">
+    {{!-- table --}}
+    <div id="billsTable" class="col-8">
 
-    {{!-- Accounts Card ----------------------------------------------------------------------------------------------}}
-    <div class="card">
+      {{!-- today tab --}}
+          <h5 class="mb-0 bg-light">
+            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              Today
+            </button>
+          </h5>
 
-      <div class="card-header">ACCOUNTS</div>
-      <div class="card-body ">
+        {{!-- today info --}}
+        <div id="collapseOne" class="collapse show" >
 
-        {{!-- Cash Panel --}}
-        <div class="card border-0 p-0 m-0">
-          <div class="card-header p-0" id="headingOne">
-            <h5 class="mb-0">
-              <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                Cash
-              </button>
-            </h5>
-          </div>
-          {{!-- Cash Collapse --}}
-          <div id="collapseOne" class="collapse show border-0" aria-labelledby="headingOne" data-parent="#accordion">
-            <div class="card-body p-1 border-bottom text-center">
-              <p class="m-0">Bank Account Balances</p>
-
-              {{!-- INSERT BACK ACCOUNT TYPES, NAMES, & BALANCES --}}
-
+          {{!-- sample today table 1 --}}
+          <div class="row">
+            {{!-- logo area --}}
+            <div class="col-1">
+              logo
+            </div>
+            {{!-- bank info and date --}}
+            <div class="col-9">
+              <div class="row">
+                <div class="col">
+                  Wells Fargo
+                </div>
+              </div>
+              <div class="row border-bottom">
+                <div class="col">
+                  5/15
+                </div>
+              </div>
+            </div>
+            {{!-- amount due --}}
+            <div class="col-2">
+              $100.00
             </div>
           </div>
-        </div>
-        <br>
 
-        {{!-- Credit Card Panel --}}
-        <div class="card border-0 p-0 m-0">
-          <div class="card-header p-0" id="headingTwo">
-            <h5 class="mb-0">
-              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                Credit Cards
-              </button>
-            </h5>
-          </div>
-          {{!-- Credit Card Collapse --}}
-          <div id="collapseThree" class="collapse border-0" aria-labelledby="headingTwo" data-parent="#accordion">
-            <div class="card-body p-1 border-bottom text-center">
-              <p class="m-0">Credit Card Balances</p>
+          {{!-- sample today table 2 --}}
+          <div class="row ">
+            <div class="col-1">
+              logo
+            </div>
 
-              {{!-- INSERT CREDIT CARDS NAME, TYPE, AMOUNTS DUE --}}
+            <div class="col-9">
+              <div class="row">
+                <div class="col">
+                  American Express
+                </div>
+              </div>
+              <div class="row border-bottom">
+                <div class="col">
+                  5/15
+                </div>
+              </div>
+            </div>
 
+            <div class="col-2">
+              $200.00
             </div>
           </div>
+
         </div>
-        <br>
 
-                {{!-- Loans Panel --}}
-        <div class="card border-0 p-0 m-0">
-          <div class="card-header p-0" id="headingThree">
-            <h5 class="mb-0">
-              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                Loans
-              </button>
-            </h5>
-          </div>
-          {{!-- Loans Collapse --}}
-          <div id="collapseTwo" class="collapse border-0" aria-labelledby="headingThree" data-parent="#accordion">
-            <div class="card-body p-1 border-bottom text-center">
-              <p class="m-0">Loans</p>
 
-              {{!-- INSERT Loans NAME, TYPE, AMOUNTS DUE --}}
+        {{!-- This Week Tab --}}
+          <h5 class="mb-0 bg-light">
+            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+              Later this Week
+            </button>
+          </h5>
 
+        {{!-- this week info --}}
+        <div id="collapseTwo" class="collapse show">
+
+          {{!-- sample this week table 1 --}}
+          <div class="row">
+            {{!-- logo area --}}
+            <div class="col-1">
+              logo
+            </div>
+            {{!-- bank info and date --}}
+            <div class="col-9">
+              <div class="row">
+                <div class="col">
+                  Wells Fargo
+                </div>
+              </div>
+              <div class="row border-bottom">
+                <div class="col">
+                  5/15
+                </div>
+              </div>
+            </div>
+            {{!-- amount due --}}
+            <div class="col-2">
+              $100.00
             </div>
           </div>
-        </div>
-        <br>
 
+          {{!-- sample this week table 2 --}}
+          <div class="row ">
+            <div class="col-1">
+              logo
+            </div>
+
+            <div class="col-9">
+              <div class="row">
+                <div class="col">
+                  American Express
+                </div>
+              </div>
+              <div class="row border-bottom">
+                <div class="col">
+                  5/15
+                </div>
+              </div>
+            </div>
+
+            <div class="col-2">
+              $200.00
+            </div>
+          </div>
+
+        </div>
+
+
+        {{!-- Next Week Tab --}}
+          <h5 class="mb-0 bg-light">
+            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              Next Week
+            </button>
+          </h5>
+
+        {{!-- Next Week info --}}
+        <div id="collapseThree" class="collapse">
+
+          {{!-- sample Next Week table 1 --}}
+          <div class="row">
+            {{!-- logo area --}}
+            <div class="col-1">
+              logo
+            </div>
+            {{!-- bank info and date --}}
+            <div class="col-9">
+              <div class="row">
+                <div class="col">
+                  Wells Fargo
+                </div>
+              </div>
+              <div class="row border-bottom">
+                <div class="col">
+                  5/15
+                </div>
+              </div>
+            </div>
+            {{!-- amount due --}}
+            <div class="col-2">
+              $100.00
+            </div>
+          </div>
+
+          {{!-- sample Next Week table 2 --}}
+          <div class="row ">
+            <div class="col-1">
+              logo
+            </div>
+
+            <div class="col-9">
+              <div class="row">
+                <div class="col">
+                  American Express
+                </div>
+              </div>
+              <div class="row border-bottom">
+                <div class="col">
+                  5/15
+                </div>
+              </div>
+            </div>
+
+            <div class="col-2">
+              $200.00
+            </div>
+          </div>
+
+        </div>
+
+        {{!-- This Month Tab --}}
+          <h5 class="mb-0 bg-light">
+            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+              Later this Month
+            </button>
+          </h5>
+        {{!-- This Month info --}}
+        <div id="collapseFour" class="collapse">
+
+          {{!-- sample This Month table 1 --}}
+          <div class="row">
+            {{!-- logo area --}}
+            <div class="col-1">
+              logo
+            </div>
+            {{!-- bank info and date --}}
+            <div class="col-9">
+              <div class="row">
+                <div class="col">
+                  Wells Fargo
+                </div>
+              </div>
+              <div class="row border-bottom">
+                <div class="col">
+                  5/15
+                </div>
+              </div>
+            </div>
+            {{!-- amount due --}}
+            <div class="col-2">
+              $100.00
+            </div>
+          </div>
+
+          {{!-- sample This Month table 2 --}}
+          <div class="row ">
+            <div class="col-1">
+              logo
+            </div>
+
+            <div class="col-9">
+              <div class="row">
+                <div class="col">
+                  American Express
+                </div>
+              </div>
+              <div class="row border-bottom">
+                <div class="col">
+                  5/15
+                </div>
+              </div>
+            </div>
+
+            <div class="col-2">
+              $200.00
+            </div>
+          </div>
+
+        </div>
+
+    </div>
+
+    {{!-- calender --}}
+    <div class="col-4">
+      <div class="datepicker">
+        <div class="datepicker-header"></div>
       </div>
     </div>
 
-    {{!-- Upcoming Bills Card --------------------------------------------------------------------------------------------------------------------}}
-    <div class="card">
-      <div class="card-header">UPCOMING BILLS</div>
-      <div class="card-body">
-        <h5 class="card-title">Today</h5>
-        <p class="card-text">Insert Name, Types, and Amounts.</p>
-        <h5 class="card-title">Laster this Week</h5>
-        <h5 class="card-title">Next Week</h5>
-      </div>
-    </div>
-
-    {{!-- Recent Transactions Card --------------------------------------------------------------------------------------------------------------------}}
-    <div class="card">
-      <div class="card-header">RECENT TRANSACTIONS</div>
-      <div class="card-body">
-        <h5 class="card-title">Transactions</h5>
-        <p class="card-text">INSERT   date/description/category/amounts</p>
-      </div>
-
-    </div>
+    {{!-- row closed --}}
   </div>
 
+  {{!-- container closed --}}
 </div>
+
 <br>
 <br>
+
 
 <!--Footer-->
 <footer style="background-color: #91c5a4" class="page-footer font-small indigo pt-0 text-light">
 
-    <!--Footer Links-->
-    <div class="container">
+  <!--Footer Links-->
+  <div class="container">
 
-        <!--Grid row-->
-        <div class="row pt-5 mb-3 text-center d-flex justify-content-center">
+    <!--Grid row-->
+    <div class="row pt-5 mb-3 text-center d-flex justify-content-center">
 
-            <!--Grid column-->
-            <div class="col-md-2 mb-3">
-                <h6 class="text-uppercase font-weight-bold">
-                    <h5>About Us</h5>
-                </h6>
-            </div>
-            <!--Grid column-->
-
-        </div>
-        <!--Grid row-->
-
-        <hr class="bg-light" style="margin: 0 15%;">
-
-        <!--Grid row-->
-        <div class="row d-flex text-center justify-content-center mb-md-0 mb-4">
-
-            <!--Grid column-->
-            <div class="col-md-8 col-12 mt-5">
-                <p style="line-height: 1.7rem">Our Links</p>
-
-            </div>
-            <!--Grid column-->
-
-        </div>
-        <!--Grid row-->
-
-        <hr class="clearfix d-md-none rgba-white-light" style="margin: 10% 15% 5%;">
-
-        <!--Grid row-->
-        <div class="row pb-3">
-
-            <!--Grid column-->
-            <div class="col-md-12">
-
-                <div class="mb-5 flex-center">
-                    <!--Facebook-->
-                    <a class="fb-ic">
-                        <i class="fa fa-facebook fa-lg white-text mr-md-4"> </i>
-                    </a>
-                    <!--Twitter-->
-                    <a class="tw-ic">
-                        <i class="fa fa-twitter fa-lg white-text mr-md-4"> </i>
-                    </a>
-                    <!--Google +-->
-                    <a class="gplus-ic">
-                        <i class="fa fa-google-plus fa-lg white-text mr-md-4"> </i>
-                    </a>
-                    <!--Linkedin-->
-                    <a class="li-ic">
-                        <i class="fa fa-linkedin fa-lg white-text mr-md-4"> </i>
-                    </a>
-                    <!--Instagram-->
-                    <a class="ins-ic">
-                        <i class="fa fa-instagram fa-lg white-text mr-md-4"> </i>
-                    </a>
-                    <!--Pinterest-->
-                    <a class="pin-ic">
-                        <i class="fa fa-pinterest fa-lg white-text"> </i>
-                    </a>
-                </div>
-            </div>
-            <!--Grid column-->
-        </div>
-        <!--Grid row-->
+      <!--Grid column-->
+      <div class="col-md-2 mb-3">
+        <h6>
+          <h5>About Us</h5>
+        </h6>
+      </div>
+      <!--Grid column-->
 
     </div>
-    <!--/Footer Links-->
+    <!--Grid row-->
 
-    <!--Copyright-->
-    {{!-- <div style="background-color: #483a99" class="footer-copyright py-3 text-center">
-        © 2018 Copyright:
-        <a href="#"> Horus.com </a> --}}
+    <hr class="bg-light" style="margin: 0 15%;">
+
+    <!--Grid row-->
+    <div class="row d-flex text-center justify-content-center mb-md-0 mb-4">
+
+      <!--Grid column-->
+      <div class="col-md-8 col-12 mt-5">
+        <p style="line-height: 1.7rem">Our Links</p>
+
+      </div>
+      <!--Grid column-->
+
     </div>
-    <!--/Copyright-->
+    <!--Grid row-->
 
-</footer>
-<!--/Footer-->
+    <hr class="clearfix d-md-none rgba-white-light" style="margin: 10% 15% 5%;">
+
+    <!--Grid row-->
+    <div class="row d-flex text-center justify-content-center pb-3">
+
+      <!--Grid column-->
+      <div class="col-md-12 ">
+
+        <div class="mb-5 mt-3">
+          <!--Facebook-->
+          <a class="fb-ic">
+            <i class="fa fa-facebook fa-lg white-text mr-md-4"> </i>
+          </a>
+          <!--Twitter-->
+          <a class="tw-ic">
+            <i class="fa fa-twitter fa-lg white-text mr-md-4"> </i>
+          </a>
+          <!--Google +-->
+          <a class="gplus-ic">
+            <i class="fa fa-google-plus fa-lg white-text mr-md-4"> </i>
+          </a>
+          <!--Linkedin-->
+          <a class="li-ic">
+            <i class="fa fa-linkedin fa-lg white-text mr-md-4"> </i>
+          </a>
+          <!--Instagram-->
+          <a class="ins-ic">
+            <i class="fa fa-instagram fa-lg white-text mr-md-4"> </i>
+          </a>
+          <!--Pinterest-->
+          <a class="pin-ic">
+            <i class="fa fa-pinterest fa-lg white-text"> </i>
+          </a>
+        </div>
+
+      </div>
+      <!--Grid column closed-->
+    </div>
+    <!--Grid row closed-->
+
+  </div>
+
+
+  </footer>
+</html>
