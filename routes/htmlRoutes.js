@@ -7,7 +7,13 @@
 module.exports = function(app) {
 
   app.get('/', function(req, res) {
-   res.render('index')
+    res.render("login");
+   //res.render('index')
+  })
+
+  app.get('/registration', function(req, res) {
+    res.render("registration");
+   //res.render('index')
   })
 
   app.get('/index', function(req, res) {
