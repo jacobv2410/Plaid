@@ -13,7 +13,7 @@
     <hr class="bg-secondary" style="margin: 0px 30px 20px; ">
     <p>Please sign In</p>
     <label for="inputEmail" class="sr-only" id="email1">Email address</label>
-    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+    <input type="email" id="inputEmail" class="form-control" placeholder="Username" required autofocus>
     <label for="inputPassword" class="sr-only" id="password1">Password</label>
     <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
     <div class="checkbox mb-3">
@@ -40,16 +40,8 @@
 function validate() {
     var email = document.getElementById("inputEmail").value;
     var password = document.getElementById("inputPassword").value;
-    if (email == "horus@horus.com" && password == "horus"  || email == "jacobv2410@gmail.com" && password == "jacob") { 
-        alert("Login successful");
          // Redirecting to other page.
-         window.location = "index";
-        return false;
-    }
-    else {
-        alert('Invalid email or password. Please try again.')
-    }
-    
+         window.location.href = "/index";    
 }
 </script>
 
