@@ -1,22 +1,22 @@
-$(document).ready(function () {
-  $('#submitButton').on('click', function (event) {
-    event.preventDefault()
-    // function validateForm() {
-    //   if(data === '') {
-    //     alert('Please enter a data')
-    //   }
-    // }
-    var data = {
-      data_name: $('#dataInput').val()
-    }
-    $.post('/api/newdata', data, function (data) {
-      // console.log(typeof data)
+// $(document).ready(function () {
+//   $('#submitButton').on('click', function (event) {
+//     event.preventDefault()
+//     // function validateForm() {
+//     //   if(data === '') {
+//     //     alert('Please enter a data')
+//     //   }
+//     // }
+//     var data = {
+//       data_name: $('#dataInput').val()
+//     }
+//     $.post('/api/newdata', data, function (data) {
+//       // console.log(typeof data)
 
-    })
+//     })
 
-  })
-  // alert('connected')
-})
+//   })
+//   // alert('connected')
+// })
 
 
 
@@ -49,7 +49,7 @@ function openCity(evt, cityName) {
 }
 
 // Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
+// document.getElementById("defaultOpen").click("upLoad");
 
 /* PROFILE Page ===================================================================================================================== */
 

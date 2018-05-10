@@ -12,16 +12,16 @@
     </div>
     <hr class="bg-secondary" style="margin: 0px 30px 20px; ">
     <p>Please sign In</p>
-    <label for="inputEmail" class="sr-only" >Email address</label>
+    <label for="inputEmail" class="sr-only" id="email1">Email address</label>
     <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-    <label for="inputPassword" class="sr-only">Password</label>
+    <label for="inputPassword" class="sr-only" id="password1">Password</label>
     <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
     <div class="checkbox mb-3">
       <label>
         <input type="checkbox" value="remember-me"> Remember me
       </label>
     </div>
-    <button class=" btn btn-outline-secondary  btn-lg btn-primary btn-block" id="sign" type="submit">Sign in</button>
+    <button class=" btn btn-outline-secondary  btn-lg btn-primary btn-block" id="sign" type="submit" onclick="validate()">Sign in</button>
     <br>
     <div>
       <a href="#" data-toggle="modal" data-target="#myModal" class="create p-1"> Create Account</a>
@@ -31,27 +31,27 @@
   </form>
 </body>
 
+<script>
 
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <div class="modal-body"> 
-        <form>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-          </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-            </div>
-          <button type="submit" class="btn btn-light">Create Account</button>
-        </form>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+  // var database = require('app.js')
+
+ var attempt = 3; // Variable to count number of attempts.
+// Below function Executes on click of login button.
+function validate() {
+    var email = document.getElementById("inputEmail").value;
+    var password = document.getElementById("inputPassword").value;
+    if (email == "horus@horus.com" && password == "horus"  || email == "jacobv2410@gmail.com" && password == "jacob") { 
+        alert("Login successful");
+         // Redirecting to other page.
+         window.location = "index";
+        return false;
+    }
+    else {
+        alert('Invalid email or password. Please try again.')
+    }
+    
+}
+</script>
+
+
+
