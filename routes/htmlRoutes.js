@@ -7,6 +7,15 @@
 module.exports = function(app) {
 
   app.get('/', function(req, res) {
+    res.render("login");
+   //res.render('index')
+  })
+
+  app.get('/register', function(req, res) {
+    res.render("registration");
+  })
+
+  app.get('/index', function(req, res) {
    res.render('index')
   })
 
@@ -32,5 +41,9 @@ module.exports = function(app) {
 
   app.get('/profile', function(req, res) {
     res.render('profile')
+  })
+
+  app.post("/register", function(req, res){
+    res.redirect("registration");
   })
 }
