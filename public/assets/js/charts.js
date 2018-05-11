@@ -5,15 +5,12 @@ google.charts.setOnLoadCallback(drawChartPie);
 function drawChart() {
   var data = google.visualization.arrayToDataTable([
     ['Assets', 'Type'],
-    ['Chase',     11],
-    ['Discover',      2],
-    ['Bank of America',  2],
-    ['Bitcoin', 2],
-    ['Ethereum',    7]
+    ['Chase',     56],
+    ['American Express',      44]
   ]);
 
   var options = {
-    title: 'Credit Card Usage | Currency',
+    title: 'Credit Card Usage',
     pieHole: 0.4,
   };
 
@@ -24,14 +21,11 @@ function drawChart() {
 function drawChartPie() {
   var data = google.visualization.arrayToDataTable([
     ['Spending', 'Categories'],
-    ['Food & Dining', 11],
-    ['Fees & Charges',      2],
-    ['Bills & Utilities',  2],
-    ['Health & Fitness', 2],
-    ['Pets',    7],
-    ['Auto & Transport',    10],
-    ['Business Service',    8],
-    ['Uncategoriezed',    5]
+    ['Restaurants', 6],
+    ['Online Purchases',      52],
+    ['Grocery',  17],
+    ['Gas', 20],
+    ['Subscription Services',    5]
   ]);
 
   var options = {

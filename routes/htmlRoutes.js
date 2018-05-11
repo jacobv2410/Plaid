@@ -8,12 +8,10 @@ module.exports = function(app) {
 
   app.get('/', function(req, res) {
     res.render("login");
-   //res.render('index')
   })
 
-  app.get('/register', function(req, res) {
-    res.render("registration");
-   //res.render('index')
+  app.get('/overviews', function(req, res) {
+    res.render("overviews");
   })
 
   app.get('/index', function(req, res) {
