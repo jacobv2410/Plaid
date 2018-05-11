@@ -13,7 +13,6 @@ module.exports = function(app) {
 
   app.get('/register', function(req, res) {
     res.render("registration");
-   //res.render('index')
   })
 
   app.get('/index', function(req, res) {
@@ -42,5 +41,9 @@ module.exports = function(app) {
 
   app.get('/profile', function(req, res) {
     res.render('profile')
+  })
+
+  app.post("/register", function(req, res){
+    res.redirect("registration");
   })
 }
