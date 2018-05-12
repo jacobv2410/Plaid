@@ -1,6 +1,9 @@
 {
   "name": "horus",
   "version": "1.0.0",
+  "engines": {
+    "npm": "5.7.1"
+  },
   "description": "link up heroku",
   "main": "server.js",
   "scripts": {
@@ -36,5 +39,7 @@
     "path": "^0.12.7",
     "sequelize": "^4.37.7"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "favicons-webpack-plugin": "0.0.9"
+  }
 }
