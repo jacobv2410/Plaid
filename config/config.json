@@ -4,8 +4,7 @@
     "password": "root",
     "database": "horus_users",
     "host": "localhost",
-    "dialect": "mysql",
- 
+    "dialect": "mysql"
   },
   "test": {
     "username": "root",

@@ -145,7 +145,7 @@ a.nav-link {
   font-size: 0.9em;
 }
 .datepicker .ui-datepicker-calendar tr th,
-.datepicker .ui-datepicker-calendar tr 
+.datepicker .ui-datepicker-calendar tr td {
   padding-bottom: .4em;
 }
 .datepicker .ui-datepicker-calendar a {
