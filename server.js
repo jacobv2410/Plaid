@@ -22,9 +22,23 @@ var db = require("./models");
 // ====================================================================
 
 var app = express()
+
+if (process.env.JAWSDB_URL) {
+ var connection = mysql.createConnection(process.env.JAWSDB_URL)
+} else {
+  var connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password:'root',
+    database: 'horus_users'
+    
+  })
+}
+
+
 var PORT = process.env.PORT || 3000
 
-// Middles wares ------------------------------------------------------
+// Middles wares ----------------------- -------------------------------
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({

@@ -7,6 +7,7 @@
   "description": "link up heroku",
   "main": "server.js",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
   "repository": {
@@ -32,6 +33,7 @@
     "express-session": "^1.15.6",
     "express-validator": "^5.2.0",
     "fs": "0.0.1-security",
+    "mysql": "^2.15.0",
     "mysql2": "^1.5.3",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
