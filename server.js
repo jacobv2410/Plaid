@@ -13,6 +13,7 @@ var flash = require('connect-flash');
 var session = require('express-session');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
+var mysql = require('mysql')
 
 // Requiring our models for syncing
 
