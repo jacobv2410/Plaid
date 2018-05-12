@@ -6,10 +6,10 @@
     <img src="assets/img/logo.png" width="65px" height="45px">
     <ul class="nav justify-content-end bg-dark px-2 ">
       <li class="nav-item">
-        <a class="nav-link active text-light" href="#">PROFILE</a>
+        <a class="nav-link active text-light" href="profile">PROFILE</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-light" href="#">LOG OUT</a>
+        <a class="nav-link text-light" href="login">LOG OUT</a>
       </li>
     </ul>
   </div>
@@ -27,6 +27,7 @@
           <a class="nav-link text-dark" href="/accounts">ACCOUNTS</a>
         </li>
         <li class="nav-item">
+<<<<<<< HEAD
           <a class="nav-link text-dark" href="bills">BILLS</a>
         </li>
         <li class="nav-item">
@@ -34,6 +35,15 @@
         </li>
         <li class="nav-item">
           <a class="nav-link text-dark" href="trends">TRENDS</a>
+=======
+          <a class="nav-link text-dark" href="/bills">BILLS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="/transactions">TRANSACTIONS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="/trends">TRENDS</a>
+>>>>>>> b0d8d2e311734cbf57ede61c3263792bf55390bc
         </li>
       </ul>
     </div>
@@ -54,8 +64,13 @@
     </p>
     {{!-- bank collapse area holding all users bank accounts --}} {{!-- example bank accounts in tab --}}
     <div id="collapseBank" class="collapse show">
+<<<<<<< HEAD
       <button class="tablinks" onclick="openCity(event, 'Chase')" id="defaultOpen">Chase Checking</button>
       <button class="tablinks" onclick="openCity(event, 'NavyFederal')">Chase Savings</button>
+=======
+      <button class="tablinks" onclick="openCity(event, 'Chase')" id="defaultOpen">Chase</button>
+      <button class="tablinks" onclick="openCity(event, 'NavyFederal')">Navy Federal</button>
+>>>>>>> b0d8d2e311734cbf57ede61c3263792bf55390bc
     </div>
     {{!--credit card account button --}}
     <p class="mb-0 bg-light">
@@ -65,8 +80,13 @@
     </p>
     {{!-- credit card collapse area holding all users credit cards accounts --}} {{!-- example credit card accounts in tab --}}
     <div id="collapseCredit" class="collapse show">
+<<<<<<< HEAD
       <button class="tablinks" onclick="openCity(event, 'Discover')" id="defaultOpen">Chase Sapphire</button>
       <button class="tablinks" onclick="openCity(event, 'CapitalOne')">American Express</button>
+=======
+      <button class="tablinks" onclick="openCity(event, 'Discover')" id="defaultOpen">Discover</button>
+      <button class="tablinks" onclick="openCity(event, 'CapitalOne')">Capital One</button>
+>>>>>>> b0d8d2e311734cbf57ede61c3263792bf55390bc
     </div>
     <p class="mb-0 bg-light">
       <button class="btn btn-link" data-toggle="collapse" data-target="#collapseLoan" aria-expanded="true">
@@ -75,18 +95,32 @@
     </p>
     {{!-- credit card collapse area holding all users credit cards accounts --}} {{!-- example credit card accounts in tab --}}
     <div id="collapseLoan" class="collapse show">
+<<<<<<< HEAD
       <button class="tablinks" onclick="openCity(event, 'Discover')" id="defaultOpen">Capitol One Auto</button>
       <button class="tablinks" onclick="openCity(event, 'CapitalOne')">Bank of America Mortgage</button>
+=======
+      <button class="tablinks" onclick="openCity(event, 'Discover')" id="defaultOpen">Discover</button>
+      <button class="tablinks" onclick="openCity(event, 'CapitalOne')">Capital One</button>
+>>>>>>> b0d8d2e311734cbf57ede61c3263792bf55390bc
     </div>
   </div>
 
   {{!-- example clicked on bank account, tab content --}} {{!-- bank account info bar --}}
+<<<<<<< HEAD
   <div id="Checking" class="tabcontent">
     <h2>Chase</h2>
     <h6>Checking</h6>
     <hr>
     <h8> AVAILABLE BALANCE </h8>
     <h6>$986.34 </h6>
+=======
+  <div id="Chase" class="tabcontent">
+    <h3>Chase</h3>
+    <h6>Business Checking</h6>
+    <hr>
+    <h8> BALANCE AVAILABLE CASH APY TOTAL FEES</h8>
+    <h6>$3000.60 $2700.40 12.0% $55.00</h6>
+>>>>>>> b0d8d2e311734cbf57ede61c3263792bf55390bc
     {{!-- bank account table --}}
     <div class="container table">
       <table class="table table-striped table-hover">
@@ -102,6 +136,7 @@
         </thead>
         <tbody>
           <tr>
+<<<<<<< HEAD
             <td scope="row">5/11</td>
             <td>Chik-fil-A</td>
             <td>Restaurant</td>
@@ -118,22 +153,48 @@
             <td>Target</td>
             <td>Grocery</td>
             <td>$23.56</td>
+=======
+            <td scope="row">5/2</td>
+            <td>in & out</td>
+            <td>food</td>
+            <td>$10</td>
+          </tr>
+          <tr>
+            <td scope="row">5/2</td>
+            <td>dummy Transactions</td>
+            <td>dummy category</td>
+            <td>$1000</td>
+          </tr>
+          <tr>
+            <td scope="row">4/29</td>
+            <td>chocolate</td>
+            <td>dessert</td>
+            <td>$1,000,000</td>
+>>>>>>> b0d8d2e311734cbf57ede61c3263792bf55390bc
           </tr>
         </tbody>
       </table>
     </div>
   </div>
   {{!-- bank account 2 --}}
+<<<<<<< HEAD
   <div id="Savings" class="tabcontent" style="padding-top: 10px">
     <h3>Chase</h3>
     <h6>Savings</h6>
     <hr>
      <h8>  AVAILABLE BALANCE </h8>
     <h6>$1,364.74 </h6>
+=======
+  <div id="NavyFederal" class="tabcontent">
+    <h3>Navy Federal</h3>
+    <h6>Savings</h6>
+    <hr>
+>>>>>>> b0d8d2e311734cbf57ede61c3263792bf55390bc
   </div>
 
 
   {{!-- example clicked on bank account, tab content --}} {{!-- bank account info bar --}}
+<<<<<<< HEAD
   <div id="CreditCard" class="tabcontent" style="padding-top: 10px">
     <h4>CHASE SAPPHIRE</h4>
     <hr>
@@ -148,6 +209,14 @@
     <h6>$5,450.39 </h6>
      <h8> CURRENT BALANCE </h8>
     <h6>$549.61 </h6>
+=======
+  <div id="Discover" class="tabcontent">
+    <h3>Discover</h3>
+    <h6>DiscoverCard Platinum </h6>
+    <hr>
+    <h8> BALANCE AVAILABLE CREDIT TOTAL CREDIT APR TOTAL FEES</h8>
+    <h6>$-1200.46 $3800.54 $6000 21.09% $55.00</h6>
+>>>>>>> b0d8d2e311734cbf57ede61c3263792bf55390bc
   </div>
 
 </div>
