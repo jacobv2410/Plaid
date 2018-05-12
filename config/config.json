@@ -3,7 +3,7 @@
     "username": "root",
     "password": "root",
     "database": "horus_users",
-    "host": "127.0.0.1",
+    "host": "localhost",
     "dialect": "mysql",
     "port": 3306
   },
@@ -11,14 +11,14 @@
     "username": "root",
     "password": "root",
     "database": "horus_users",
-    "host": "127.0.0.1",
+    "host": "localhost",
     "dialect": "mysql"
   },
   "production": {
     "username": "root",
     "password": "root",
     "database": "horus_users",
-    "host": "127.0.0.1",
+    "host": "localhost",
     "dialect": "mysql"
   }
 }

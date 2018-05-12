@@ -6,8 +6,6 @@
 // =============================================================
 module.exports = function(app) {
 
-  // app.get('/cool', (req, res) => res.send(cool()))
-
   app.get('/', function(req, res) {
     res.render("login");
   })
