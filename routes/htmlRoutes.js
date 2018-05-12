@@ -5,6 +5,9 @@
 // Routes
 // =============================================================
 module.exports = function(app) {
+  app.get('/overviews', function(req, res) {
+    res.render("overviews");
+  })
 
   app.get('/', function(req, res) {
     res.render("login");
@@ -35,15 +38,7 @@ module.exports = function(app) {
     res.render('trends')
   })
 
-  app.get('/login', function(req, res) {
-    res.render('login')
-  })
-
   app.get('/profile', function(req, res) {
     res.render('profile')
-  })
-
-  app.post("/register", function(req, res){
-    res.redirect("registration");
-  })
+  })  
 }

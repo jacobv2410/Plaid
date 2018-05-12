@@ -1,28 +1,3 @@
-// $(document).ready(function () {
-//   $('#submitButton').on('click', function (event) {
-//     event.preventDefault()
-//     // function validateForm() {
-//     //   if(data === '') {
-//     //     alert('Please enter a data')
-//     //   }
-//     // }
-//     var data = {
-//       data_name: $('#dataInput').val()
-//     }
-//     $.post('/api/newdata', data, function (data) {
-//       // console.log(typeof data)
-
-//     })
-
-//   })
-//   // alert('connected')
-// })
-
-
-
-
-
-
 /* Calendar ===================================================================================================================== */
 $(document).ready(function() {
 
