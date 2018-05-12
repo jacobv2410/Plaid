@@ -28,15 +28,6 @@ module.exports = function(app) {
       console.log(dbUser);
     })
 
-    // db.Todo.create({
-    //   text: req.body.text,
-    //   complete: req.body.complete
-    // }).then(function(dbTodo) {
-    //   // We have access to the new todo as an argument inside of the callback function
-    //   res.json(dbTodo);
-    // });
-
-
   })
 
 // Retreving data from api and adding to database
@@ -49,8 +40,6 @@ module.exports = function(app) {
     res.json()
   })
 
-  // app.get('/api/newBurger', function(req, res) {
-  //   res.json()
-  // })
+
 
 }
