@@ -2,7 +2,8 @@
   "name": "horus",
   "version": "1.0.0",
   "engines": {
-    "npm": "5.7.1"
+    "npm": "5.7.1",
+    "node":"jc"
   },
   "description": "link up heroku",
   "main": "server.js",
